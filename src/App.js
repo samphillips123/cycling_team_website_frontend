@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+// COMPONENTS
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+// HOOKS
+import { useEffect, useState } from 'react'
+// COMPNENTS FROM REACT ROUTER
+import { Route, Routes } from 'react-router-dom'
+
+// API URL
+const apiURL = 'http://localhost:8000'
 
 function App() {
+  // STATE
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Cycling Team Website</h1>
+      <Header />
+      <Routes>
+        <Route
+          exact
+          path='/'
+          // element={}
+        />
+      </Routes>
+      <Footer />
     </div>
   );
 }
