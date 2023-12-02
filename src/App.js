@@ -1,7 +1,15 @@
 import './App.css'
 // COMPONENTS
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header'
+import Footer from './components/Footer'
+
+// PAGES
+import Calendar from './pages/Calendar'
+import Home from './pages/Home'
+import News from './pages/News'
+import Partners from './pages/Partners'
+import RacingNews from './pages/RacingNews'
+import Team from './pages/Team'
 
 // HOOKS
 import { useEffect, useState } from 'react'
@@ -22,7 +30,32 @@ function App() {
         <Route
           exact
           path='/'
-          // element={}
+          element={<Home />}
+        />
+        <Route
+          exact
+          path='/team/'
+          element={<Team />}
+        />
+        <Route
+          exact
+          path='/partners/'
+          element={<Partners />}
+        />
+        <Route
+          exact
+          path='/calendar/'
+          element={<Calendar />}
+        />
+        <Route
+          exact
+          path='/racingnews/'
+          element={<RacingNews />}
+        />
+        <Route
+          exact
+          path='/news/'
+          element={<News />}
         />
       </Routes>
       <Footer />
