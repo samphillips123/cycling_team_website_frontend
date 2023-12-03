@@ -1,4 +1,8 @@
 import './App.css'
+
+// CONTENTFUL
+import useContentful from './useContentful'
+
 // COMPONENTS
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -22,7 +26,12 @@ const apiURL = 'http://localhost:8000'
 
 
 function App() {
-  // STATE
+  const [riders, setRiders] = useState([])
+  const { getRiders } = useContentful()
+
+  useEffect(() => {
+    getRiders().then((response) => console.log(response))
+  })
 
   return (
     <div className="App">
