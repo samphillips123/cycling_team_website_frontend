@@ -27,7 +27,7 @@ const collection = 'partners' // this will be changed to state that sets the val
 
 
 function App() {
-  // const [riders, setRiders] = useState([])
+  // const [content, setContent] = useState([])
   const { getContent } = useContentful(collection)
 
   useEffect(() => {

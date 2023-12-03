@@ -1,12 +1,9 @@
 import { createClient } from "contentful"
 
 // IMPORT API ACCESS FROM ENV
-const spaceID = process.env.CONTENTFUL_SPACE_ID
-const previewToken = process.env.CONTENTFUL_PREVIEW_TOKEN
-// const deliveryToken = process.env.CONTENTFUL_DELIVERY_TOKEN
-
-console.log(`SPACE ID: ${spaceID}`)
-console.log(`PREVIEW TOKEN: ${previewToken}`)
+const spaceID = process.env.REACT_APP_CONTENTFUL_SPACE_ID
+const previewToken = process.env.REACT_APP_CONTENTFUL_PREVIEW_TOKEN
+// const deliveryToken = process.env.REACT_APP_CONTENTFUL_DELIVERY_TOKEN
 
 // guidance on setting up Contentful:
 // https://www.youtube.com/watch?v=AWie7zwAyU0
