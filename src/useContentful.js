@@ -1,28 +1,35 @@
 import { createClient } from "contentful"
 
+// IMPORT API ACCESS FROM ENV
+const spaceID = process.env.CONTENTFUL_SPACE_ID
+const previewToken = process.env.CONTENTFUL_PREVIEW_TOKEN
+// const deliveryToken = process.env.CONTENTFUL_DELIVERY_TOKEN
+
+console.log(`SPACE ID: ${spaceID}`)
+console.log(`PREVIEW TOKEN: ${previewToken}`)
+
 // guidance on setting up Contentful:
 // https://www.youtube.com/watch?v=AWie7zwAyU0
-const useContentful = () => {
+const useContentful = (collection) => {
 
     const client = createClient({
-        space: '', // Need to set up in a .env
-        accessToken: '', // Need to set up in a .env
+        space: `${spaceID}`,
+        accessToken: `${previewToken}`,
         host: 'preview.contentful.com',
     })
 
-    const getRiders = async () => {
+    const getContent = async () => {
         try {
-            const riders = await client.getEntries({
-                content_type: 'cyclingTeamRiders',
+            const content = await client.getEntries({
+                content_type: collection,
                 select: 'fields',
-                order: 'fields.fullName'
             })
-            return riders
+            return content
         } catch (err) {
-            console.log(`ERROR FETCHING RIDERS: ${err}`)
+            console.log(`ERROR FETCHING FROM CONTENTFUL: ${err}`)
         }
     }
-    return { getRiders }
+    return { getContent }
 }
 
 export default useContentful

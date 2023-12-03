@@ -21,16 +21,17 @@ import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 // API URL
-const apiURL = 'http://localhost:8000'
+// const apiURL = 'http://localhost:8000'
 
+const collection = 'partners' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
 
 
 function App() {
-  const [riders, setRiders] = useState([])
-  const { getRiders } = useContentful()
+  // const [riders, setRiders] = useState([])
+  const { getContent } = useContentful(collection)
 
   useEffect(() => {
-    getRiders().then((response) => console.log(response))
+    getContent().then((response) => console.log(response))
   })
 
   return (
