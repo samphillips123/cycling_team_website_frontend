@@ -21,7 +21,14 @@ const useContentful = (collection) => {
                 content_type: collection,
                 select: 'fields',
             })
-            return content
+
+            const sanitizedContent = content.items.map((item) => {
+                return {
+                    ...item.fields
+                }
+            })
+
+            return sanitizedContent
         } catch (err) {
             console.log(`ERROR FETCHING FROM CONTENTFUL: ${err}`)
         }

@@ -23,17 +23,19 @@ import { Route, Routes } from 'react-router-dom'
 // API URL
 // const apiURL = 'http://localhost:8000'
 
-const collection = 'calendarEvents' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
+const collection = 'team' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
 // ['calendarEvents', 'mainContent', 'partners', 'team', 'teamNews']
 
 
 
 function App() {
-  // const [content, setContent] = useState([])
+  const [content, setContent] = useState([])
   const { getContent } = useContentful(collection)
 
+  
+
   useEffect(() => {
-    getContent().then((response) => console.log(response))
+    getContent().then((response) => setContent(response))
   })
 
   return (
@@ -49,7 +51,7 @@ function App() {
         <Route
           exact
           path='/team/'
-          element={<Team />}
+          element={<Team content={content} />}
         />
         <Route
           exact

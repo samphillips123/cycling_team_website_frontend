@@ -1,7 +1,8 @@
+import Member from "../components/Member"
+
+
 const Team = (props) => {
-    return (
-        <h1>Team</h1>
-    )
+    return props.content.map((member) => <Member member={member} key={member._id} />)
 }
 
 export default Team
