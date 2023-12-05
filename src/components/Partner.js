@@ -1,6 +1,9 @@
-const Partner = (props) => {
+const Partner = ({ partner }) => {
     return (
-        <h1>Partner</h1>
+        <div>
+            <img src={partner.partnerLogo.fields.file.url} alt={`Logo of team partner, ${partner.partnerName}`} />
+            <h3>{partner.partnerName}</h3>
+        </div>
     )
 }
 
