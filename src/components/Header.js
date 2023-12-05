@@ -1,6 +1,14 @@
 const Header = (props) => {
     return (
-        <h1>Header</h1>
+        <div>
+            <nav>
+                <a href='/team/'>Team</a>
+                <a href='/partners/'>Partners</a>
+                <a href='/calendar/'>Calendar</a>
+                <a href='/racingnews/'>Racing</a>
+                <a href='/news/'>News</a>
+            </nav>
+        </div>
     )
 }
 
