@@ -23,7 +23,7 @@ import { Route, Routes } from 'react-router-dom'
 // API URL
 // const apiURL = 'http://localhost:8000'
 
-const collection = 'partners' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
+const collection = 'calendarEvents' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
 // ['calendarEvents', 'mainContent', 'partners', 'team', 'teamNews']
 
 

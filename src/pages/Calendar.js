@@ -1,7 +1,7 @@
+import Event from "../components/Event"
+
 const Calendar = (props) => {
-    return (
-        <h1>Calendar</h1>
-    )
+    return props.content.map((event) => <Event event={event} key={event._id} />)
 }
 
 export default Calendar

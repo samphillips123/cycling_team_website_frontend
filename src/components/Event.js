@@ -1,6 +1,9 @@
-const Event = (props) => {
+const Event = ({ event }) => {
     return (
-        <h1>Event</h1>
+        <div>
+            <h3>{event.eventName}</h3>
+            <h4>{event.eventDate}</h4>
+        </div>
     )
 }
 
