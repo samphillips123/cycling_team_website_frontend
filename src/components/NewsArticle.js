@@ -1,6 +1,10 @@
-const NewsArticle = (props) => {
+const NewsArticle = ({ newsArticle }) => {
     return (
-        <h1>NewsArticle</h1>
+        // need to filter content to only general news.
+        <div>
+            {/* <img src={newsArticle.newsTitleImg.fields.file.url} alt={`"${newsArticle.newsTitle}" article.`} /> */}
+            <h3>{newsArticle.newsTitle}</h3>
+        </div>
     )
 }
 

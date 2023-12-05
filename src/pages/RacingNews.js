@@ -1,7 +1,8 @@
+import RacingNewsArticle from "../components/RacingNewsArticle"
+
 const RacingNews = (props) => {
-    return (
-        <h1>RacingNews</h1>
-    )
+    return props.content.map((racingArticle) => <RacingNewsArticle racingArticle={racingArticle} key={racingArticle._id} />)
+    // need to filter content to only racing news.
 }
 
 export default RacingNews

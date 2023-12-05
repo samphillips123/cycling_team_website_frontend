@@ -1,6 +1,10 @@
-const RacingNewsArticle = (props) => {
+const RacingNewsArticle = ({ racingArticle }) => {
     return (
-        <h1>RacingNewsArticle</h1>
+        // need to filter content to only racing news.
+        <div>
+            {/* <img src={racingArticle.newsTitleImg.fields.file.url} alt={`"${racingArticle.newsTitle}" article.`} /> */}
+            <h3>{racingArticle.newsTitle}</h3>
+        </div>
     )
 }
 
