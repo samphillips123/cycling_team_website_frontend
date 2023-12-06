@@ -15,7 +15,7 @@ const useContentful = (collection) => {
         host: 'preview.contentful.com',
     })
 
-    const getContent = async () => {
+    const getPageContent = async () => {
         try {
             const content = await client.getEntries({
                 content_type: collection,
@@ -33,7 +33,7 @@ const useContentful = (collection) => {
             console.log(`ERROR FETCHING FROM CONTENTFUL: ${err}`)
         }
     }
-    return { getContent }
+    return { getPageContent }
 }
 
 export default useContentful

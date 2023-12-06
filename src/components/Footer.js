@@ -1,4 +1,4 @@
-// IMPORT SOCIAL MEDIA ICONS
+// IMPORT SOCIAL MEDIA ICONS (change between 24 & 32 to control size)
 import facebookLogo24 from '../public/imgs/facebook-logo-24.png'
 import instagramLogo24 from '../public/imgs/instagram-logo-24.png'
 import twitterLogo24 from '../public/imgs/twitter-logo-24.png'

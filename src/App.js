@@ -30,12 +30,12 @@ const collection = 'partners' // this will be changed to state that sets the val
 
 function App() {
   const [content, setContent] = useState([])
-  const { getContent } = useContentful(collection)
+  const { getPageContent } = useContentful(collection)
 
   
 
   useEffect(() => {
-    getContent().then((response) => setContent(response))
+    getPageContent().then((response) => setContent(response))
   })
 
   return (
