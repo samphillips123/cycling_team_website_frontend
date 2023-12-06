@@ -29,21 +29,28 @@ const collection = 'partners' // this will be changed to state that sets the val
 
 
 function App() {
-  const [content, setContent] = useState([])
-  const { getPageContent } = useContentful(collection)
+  const [mainContent, setMainContent] = useState([])
+  const [pageContent, setPageContent] = useState([])
+  const { getMainContent, getPageContent } = useContentful(collection)
 
-  
+   
 
   useEffect(() => {
-    getPageContent().then((response) => setContent(response))
+    getPageContent().then((response) => setPageContent(response))
   })
+
+  useEffect(() => {
+    getMainContent().then((response) => setMainContent(response))
+  },[])
+  useEffect(() => {
+    getMainContent().then((response) => console.log(response))
+  },[])
 
   return (
     <div className="App">
-      <h1>Cycling Team Website</h1>
-      <Header />
+      <Header mainContent={mainContent} />
       <Routes>
-        <Route
+        <Route 
           exact
           path='/'
           element={<Home />}
@@ -51,30 +58,30 @@ function App() {
         <Route
           exact
           path='/team/'
-          element={<Team content={content} />}
+          element={<Team pageContent={pageContent} />}
         />
         <Route
           exact
           path='/partners/'
-          element={<Partners content={content} />}
+          element={<Partners pageContent={pageContent} />}
         />
         <Route
           exact
           path='/calendar/'
-          element={<Calendar content={content} />}
+          element={<Calendar pageContent={pageContent} />}
         />
         <Route
           exact
           path='/racingnews/'
-          element={<RacingNews content={content} />}
+          element={<RacingNews pageContent={pageContent} />}
         />
         <Route
           exact
           path='/news/'
-          element={<News content={content} />}
+          element={<News pageContent={pageContent} />}
         />
       </Routes>
-      <Footer />
+      <Footer mainContent={mainContent} />
     </div>
   );
 }

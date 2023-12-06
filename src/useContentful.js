@@ -15,14 +15,14 @@ const useContentful = (collection) => {
         host: 'preview.contentful.com',
     })
 
-    const getPageContent = async () => {
+    const getMainContent = async () => {
         try {
-            const content = await client.getEntries({
-                content_type: collection,
+            const mainContent = await client.getEntries({
+                content_type: 'mainContent',
                 select: 'fields',
             })
 
-            const sanitizedContent = content.items.map((item) => {
+            const sanitizedContent = mainContent.items.map((item) => {
                 return {
                     ...item.fields
                 }
@@ -30,10 +30,30 @@ const useContentful = (collection) => {
 
             return sanitizedContent
         } catch (err) {
-            console.log(`ERROR FETCHING FROM CONTENTFUL: ${err}`)
+            console.log(`ERROR FETCHING MAIN CONTENT FROM CONTENTFUL: ${err}`)
         }
     }
-    return { getPageContent }
+
+    const getPageContent = async () => {
+        try {
+            const pageContent = await client.getEntries({
+                content_type: collection,
+                select: 'fields',
+            })
+
+            const sanitizedContent = pageContent.items.map((item) => {
+                return {
+                    ...item.fields
+                }
+            })
+
+            return sanitizedContent
+        } catch (err) {
+            console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
+        }
+    }
+
+    return { getMainContent, getPageContent }
 }
 
 export default useContentful

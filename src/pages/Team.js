@@ -2,7 +2,7 @@ import Member from "../components/Member"
 
 
 const Team = (props) => {
-    return props.content.map((member) => <Member member={member} key={member._id} />)
+    return props.pageContent.map((member) => <Member member={member} key={member._id} />)
 }
 
 export default Team
