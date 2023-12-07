@@ -23,7 +23,7 @@ import { Route, Routes } from 'react-router-dom'
 // API URL
 // const apiURL = 'http://localhost:8000'
 
-const collection = 'partners' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
+// let collection = 'team' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
 // ['calendarEvents', 'mainContent', 'partners', 'team', 'teamNews']
 
 
@@ -31,9 +31,10 @@ const collection = 'partners' // this will be changed to state that sets the val
 function App() {
   const [mainContent, setMainContent] = useState([])
   const [pageContent, setPageContent] = useState([])
+  const [collection, setCollection] = useState('team')
   const { getMainContent, getPageContent } = useContentful(collection)
 
-   
+
 
   useEffect(() => {
     getPageContent().then((response) => setPageContent(response))
@@ -41,16 +42,19 @@ function App() {
 
   useEffect(() => {
     getMainContent().then((response) => setMainContent(response))
-  },[])
-  useEffect(() => {
-    getMainContent().then((response) => console.log(response))
-  },[])
+  }, [])
+  // useEffect(() => {
+  //   getMainContent().then((response) => console.log(response))
+  // },[])
 
   return (
     <div className="App">
-      <Header mainContent={mainContent} />
+      <Header
+        mainContent={mainContent}
+        setCollection={setCollection}
+      />
       <Routes>
-        <Route 
+        <Route
           exact
           path='/'
           element={<Home />}
