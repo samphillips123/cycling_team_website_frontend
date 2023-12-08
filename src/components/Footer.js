@@ -5,7 +5,7 @@ const Footer = (props) => {
     return (
         <div>
             <nav>
-                <a href='/' id='teamHomeNav'>
+                <a id='footerLogo' href='/' >
                     {props.mainContent.map((team) => <TeamLogo team={team} key={team._id} />)}
                 </a>
                 {props.mainContent.map((socials) => <TeamSocials socials={socials} key={socials._id} />)}

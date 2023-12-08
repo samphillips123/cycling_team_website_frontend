@@ -1,10 +1,9 @@
-import TeamLogo from './TeamLogo'
 import { Link } from 'react-router-dom'
+import TeamLogo from './TeamLogo'
 
 const Header = (props) => {
     return (
         <div>
-            <nav>
                 <Link to={'/'}>
                     {props.mainContent.map((team) => <TeamLogo team={team} key={team._id} />)}
                 </Link>
@@ -23,7 +22,6 @@ const Header = (props) => {
                 <Link to={'/news/'} >
                     <h3>News</h3>
                 </Link>
-            </nav>
         </div>
     )
 }
