@@ -9,16 +9,16 @@ import youtubeLogo24 from '../public/imgs/youtube-logo-24.png'
 const TeamSocials = ({ socials }) => {
     return (
         <div>
-            <Link to={socials.instagramUrl} target='_blank' >
+            <Link to={socials.instagramUrl} target='_blank' class='socialLinks' >
                 <img src={instagramLogo24} alt='Instagram icon with link.' />
             </Link>
-            <Link to={socials.twitterXUrl} target='_blank' >
+            <Link to={socials.twitterXUrl} target='_blank' class='socialLinks' >
                 <img src={twitterLogo24} alt='Twitter icon with link.' />
             </Link>
-            <Link to={socials.facebookUrl} target='_blank' >
+            <Link to={socials.facebookUrl} target='_blank' class='socialLinks' >
                 <img src={facebookLogo24} alt='Facebook icon with link.' />
             </Link>
-            <Link to={socials.youTubeUrl} target='_blank' >
+            <Link to={socials.youTubeUrl} target='_blank' class='socialLinks' >
                 <img src={youtubeLogo24} alt='YouTube icon with link.' />
             </Link>
         </div>
