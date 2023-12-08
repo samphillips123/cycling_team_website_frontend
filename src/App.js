@@ -20,38 +20,47 @@ import { useEffect, useState } from 'react'
 // COMPNENTS FROM REACT ROUTER
 import { Route, Routes } from 'react-router-dom'
 
-// API URL
-// const apiURL = 'http://localhost:8000'
-
 // let collection = 'team' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
 // ['calendarEvents', 'mainContent', 'partners', 'team', 'teamNews']
 
 
 
 function App() {
+  // SETTING STATE FOR EACH DATA COLLECTION
   const [mainContent, setMainContent] = useState([])
-  const [pageContent, setPageContent] = useState([])
-  const [collection, setCollection] = useState('team')
-  const { getMainContent, getPageContent } = useContentful(collection)
+  const [teamContent, setTeamContent] = useState([])
+  const [partnersContent, setPartnersContent] = useState([])
+  const [calendarContent, setCalendarContent] = useState([])
+  const [racingContent, setRacingContent] = useState([])
+  const [newsContent, setNewsContent] = useState([])
 
+  // ACCESSING CONTENTFUL
+  const { getMainContent, getTeamContent, getPartnersContent, getCalendarContent, getRacingContent, getNewsContent } = useContentful()
 
-
-  useEffect(() => {
-    getPageContent().then((response) => setPageContent(response))
-  })
-
+  // useEFFECT FOR EACH DATA COLLECTION
   useEffect(() => {
     getMainContent().then((response) => setMainContent(response))
   }, [])
-  // useEffect(() => {
-  //   getMainContent().then((response) => console.log(response))
-  // },[])
+  useEffect(() => {
+    getTeamContent().then((response) => setTeamContent(response))
+  })
+  useEffect(() => {
+    getPartnersContent().then((response) => setPartnersContent(response))
+  })
+  useEffect(() => {
+    getCalendarContent().then((response) => setCalendarContent(response))
+  })
+  useEffect(() => {
+    getRacingContent().then((response) => setRacingContent(response))
+  })
+  useEffect(() => {
+    getNewsContent().then((response) => setNewsContent(response))
+  })
 
   return (
     <div className="App">
       <Header
         mainContent={mainContent}
-        setCollection={setCollection}
       />
       <Routes>
         <Route
@@ -62,30 +71,32 @@ function App() {
         <Route
           exact
           path='/team/'
-          element={<Team pageContent={pageContent} />}
+          element={<Team teamContent={teamContent} />}
         />
         <Route
           exact
           path='/partners/'
-          element={<Partners pageContent={pageContent} />}
+          element={<Partners partnersContent={partnersContent} />}
         />
         <Route
           exact
           path='/calendar/'
-          element={<Calendar pageContent={pageContent} />}
+          element={<Calendar calendarContent={calendarContent} />}
         />
         <Route
           exact
           path='/racingnews/'
-          element={<RacingNews pageContent={pageContent} />}
+          element={<RacingNews racingContent={racingContent} />}
         />
         <Route
           exact
           path='/news/'
-          element={<News pageContent={pageContent} />}
+          element={<News newsContent={newsContent} />}
         />
       </Routes>
-      <Footer mainContent={mainContent} />
+      <Footer
+        mainContent={mainContent}
+      />
     </div>
   );
 }

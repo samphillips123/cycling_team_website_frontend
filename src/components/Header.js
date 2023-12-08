@@ -1,26 +1,26 @@
 import TeamLogo from './TeamLogo'
 import { Link } from 'react-router-dom'
 
-const Header = ({ mainContent, setCollection }) => {
+const Header = (props) => {
     return (
         <div>
             <nav>
                 <Link to={'/'}>
-                    {mainContent.map((team) => <TeamLogo team={team} key={team._id} />)}
+                    {props.mainContent.map((team) => <TeamLogo team={team} key={team._id} />)}
                 </Link>
-                <Link to={'/team/'} onClick={() => setCollection('team')} >
+                <Link to={'/team/'} >
                     <h3>Team</h3>
                 </Link>
-                <Link to={'/partners/'} onClick={() => setCollection('partners')} >
+                <Link to={'/partners/'} >
                     <h3>Partners</h3>
                 </Link>
-                <Link to={'/calendar/'} onClick={() => setCollection('calendarEvents')} >
+                <Link to={'/calendar/'} >
                     <h3>Calendar</h3>
                 </Link>
-                <Link to={'/racingnews/'} onClick={() => setCollection('teamNews')} >
+                <Link to={'/racingnews/'} >
                     <h3>Racing</h3>
                 </Link>
-                <Link to={'/news/'} onClick={() => setCollection('teamNews')} >
+                <Link to={'/news/'} >
                     <h3>News</h3>
                 </Link>
             </nav>
