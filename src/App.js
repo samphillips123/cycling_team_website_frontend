@@ -1,7 +1,8 @@
 import './App.css'
 
 // CONTENTFUL
-import useContentful from './useContentful'
+// import useContentful from './useContentful'
+import { createClient } from "contentful"
 
 // COMPONENTS
 import Header from './components/Header'
@@ -20,9 +21,6 @@ import { useEffect, useState } from 'react'
 // COMPNENTS FROM REACT ROUTER
 import { Route, Routes } from 'react-router-dom'
 
-// let collection = 'team' // this will be changed to state that sets the value based off which navbar tab is selected. This will specify the collection that is fetched from useContentful.js
-// ['calendarEvents', 'mainContent', 'partners', 'team', 'teamNews']
-
 
 
 function App() {
@@ -35,27 +33,157 @@ function App() {
   const [newsContent, setNewsContent] = useState([])
 
   // ACCESSING CONTENTFUL
-  const { getMainContent, getTeamContent, getPartnersContent, getCalendarContent, getRacingContent, getNewsContent } = useContentful()
+  // const { getMainContent, getTeamContent, getPartnersContent, getCalendarContent, getRacingContent, getNewsContent } = useContentful()
 
-  // useEFFECT FOR EACH DATA COLLECTION
+  const spaceID = process.env.REACT_APP_CONTENTFUL_SPACE_ID
+  const previewToken = process.env.REACT_APP_CONTENTFUL_PREVIEW_TOKEN
+
+  const client = createClient({
+    space: `${spaceID}`,
+    accessToken: `${previewToken}`,
+    host: 'preview.contentful.com',
+  })
+
+  // USEEFFECT
+  // main useEffect
   useEffect(() => {
+    const getMainContent = async () => {
+      try {
+        const mainContent = await client.getEntries({
+          content_type: 'mainContent',
+          select: 'fields',
+        })
+
+        const sanitizedContent = mainContent.items.map((item) => {
+          return {
+            ...item.fields
+          }
+        })
+
+        return sanitizedContent
+      } catch (err) {
+        console.log(`ERROR FETCHING MAIN CONTENT FROM CONTENTFUL: ${err}`)
+      }
+    }
     getMainContent().then((response) => setMainContent(response))
   }, [])
+
+  // team useEffect
   useEffect(() => {
+    const getTeamContent = async () => {
+      try {
+        const teamContent = await client.getEntries({
+          content_type: 'team',
+          select: 'fields',
+        })
+
+        const sanitizedContent = teamContent.items.map((item) => {
+          return {
+            ...item.fields
+          }
+        })
+
+        return sanitizedContent
+      } catch (err) {
+        console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
+      }
+    }
     getTeamContent().then((response) => setTeamContent(response))
-  })
+  }, [])
+
+  // partners useEffect
   useEffect(() => {
+    const getPartnersContent = async () => {
+      try {
+        const partnersContent = await client.getEntries({
+          content_type: 'partners',
+          select: 'fields',
+        })
+
+        const sanitizedContent = partnersContent.items.map((item) => {
+          return {
+            ...item.fields
+          }
+        })
+
+        return sanitizedContent
+      } catch (err) {
+        console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
+      }
+    }
     getPartnersContent().then((response) => setPartnersContent(response))
-  })
+  }, [])
+
+  // calendar useEffect
   useEffect(() => {
+    const getCalendarContent = async () => {
+      try {
+        const calendarContent = await client.getEntries({
+          content_type: 'calendarEvents',
+          select: 'fields',
+        })
+
+        const sanitizedContent = calendarContent.items.map((item) => {
+          return {
+            ...item.fields
+          }
+        })
+
+        return sanitizedContent
+      } catch (err) {
+        console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
+      }
+    }
     getCalendarContent().then((response) => setCalendarContent(response))
-  })
+  }, [])
+
+  // racing useEffect
   useEffect(() => {
+    const getRacingContent = async () => {
+      try {
+        const racingContent = await client.getEntries({
+          content_type: 'teamNews',
+          select: 'fields',
+        })
+
+        const sanitizedContent = racingContent.items.map((item) => {
+          return {
+            ...item.fields
+          }
+        })
+
+        return sanitizedContent
+      } catch (err) {
+        console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
+      }
+    }
     getRacingContent().then((response) => setRacingContent(response))
-  })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // news useEffect
   useEffect(() => {
+    const getNewsContent = async () => {
+      try {
+        const newsContent = await client.getEntries({
+          content_type: 'teamNews',
+          select: 'fields',
+        })
+
+        const sanitizedContent = newsContent.items.map((item) => {
+          return {
+            ...item.fields
+          }
+        })
+
+        return sanitizedContent
+      } catch (err) {
+        console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
+      }
+    }
     getNewsContent().then((response) => setNewsContent(response))
-  })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className="App">
