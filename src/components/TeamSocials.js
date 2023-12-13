@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
 // IMPORT SOCIAL MEDIA ICONS (change between 24 & 32 to control size)
-import facebookLogo24 from '../public/imgs/facebook-logo-24.png'
-import instagramLogo24 from '../public/imgs/instagram-logo-24.png'
-import twitterLogo24 from '../public/imgs/twitter-logo-24.png'
-import youtubeLogo24 from '../public/imgs/youtube-logo-24.png'
+import facebookLogo24 from '../assets/facebook-logo-24.png'
+import instagramLogo24 from '../assets/instagram-logo-24.png'
+import twitterLogo24 from '../assets/twitter-logo-24.png'
+import youtubeLogo24 from '../assets/youtube-logo-24.png'
 
 const TeamSocials = ({ socials }) => {
     return (

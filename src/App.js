@@ -66,6 +66,7 @@ function App() {
       }
     }
     getMainContent().then((response) => setMainContent(response))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // team useEffect
@@ -89,6 +90,7 @@ function App() {
       }
     }
     getTeamContent().then((response) => setTeamContent(response))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // partners useEffect
@@ -112,6 +114,7 @@ function App() {
       }
     }
     getPartnersContent().then((response) => setPartnersContent(response))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // calendar useEffect
@@ -135,6 +138,7 @@ function App() {
       }
     }
     getCalendarContent().then((response) => setCalendarContent(response))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // racing useEffect
