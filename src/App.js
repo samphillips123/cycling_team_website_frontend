@@ -194,38 +194,40 @@ function App() {
       <Header
         mainContent={mainContent}
       />
-      <Routes>
-        <Route
-          exact
-          path='/'
-          element={<Home />}
-        />
-        <Route
-          exact
-          path='/team/'
-          element={<Team teamContent={teamContent} />}
-        />
-        <Route
-          exact
-          path='/partners/'
-          element={<Partners partnersContent={partnersContent} />}
-        />
-        <Route
-          exact
-          path='/calendar/'
-          element={<Calendar calendarContent={calendarContent} />}
-        />
-        <Route
-          exact
-          path='/racingnews/'
-          element={<RacingNews racingContent={racingContent} />}
-        />
-        <Route
-          exact
-          path='/news/'
-          element={<News newsContent={newsContent} />}
-        />
-      </Routes>
+      <div className='flex flex-col justify-center items-center min-h-screen'>
+        <Routes>
+          <Route
+            exact
+            path='/'
+            element={<Home />}
+          />
+          <Route
+            exact
+            path='/team/'
+            element={<Team teamContent={teamContent} />}
+          />
+          <Route
+            exact
+            path='/partners/'
+            element={<Partners partnersContent={partnersContent} />}
+          />
+          <Route
+            exact
+            path='/calendar/'
+            element={<Calendar calendarContent={calendarContent} />}
+          />
+          <Route
+            exact
+            path='/racingnews/'
+            element={<RacingNews racingContent={racingContent} />}
+          />
+          <Route
+            exact
+            path='/news/'
+            element={<News newsContent={newsContent} />}
+          />
+        </Routes>
+      </div>
       <Footer
         mainContent={mainContent}
       />
