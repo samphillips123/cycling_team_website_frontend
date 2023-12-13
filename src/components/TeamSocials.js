@@ -8,7 +8,7 @@ import youtubeLogo24 from '../assets/youtube-logo-24.png'
 
 const TeamSocials = ({ socials }) => {
     return (
-        <div className='flex m-10'>
+        <div className='flex mx-10 '>
             <Link to={socials.instagramUrl} target='_blank' className='m-5' >
                 <img src={instagramLogo24} alt='Instagram icon with link.' />
             </Link>
