@@ -106,8 +106,8 @@ const Header = (props) => {
     return (
         <nav className={
             scrollBackground
-                ? 'bg-white h-14 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2 transition ease-in-out duration-200 shadow-custom shadow-primary-green'
-                : 'bg-white h-14 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2 transition ease-in-out duration-200'
+                ? 'h-14 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2 transition ease-in-out duration-200 shadow-custom shadow-primary-green'
+                : 'h-14 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2 transition ease-in-out duration-200'
         }
         >
             {/* navbar if desktop */}
@@ -211,7 +211,7 @@ const Header = (props) => {
                         initial='hidden'
                         animate='visible'
                         exit='exit'
-                        className='fixed top-[80px] left-4  w-[calc(100%-2rem)] h-screen flex items-center justify-center z-10 shadow-custom shadow-primary-green bg-white'
+                        className='fixed top-[80px] left-4  w-[calc(100%-2rem)] h-screen flex items-center justify-center z-10 shadow-custom shadow-primary-green'
                     >
                         {/* nav links container */}
                         <div className='flex flex-col items-center justify-center gap-12 h-full' >

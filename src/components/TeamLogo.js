@@ -1,8 +1,8 @@
 const TeamLogo = ({ team }) => {
     return (
-        <div className='m-5'>
-            <h1>{team.teamName}</h1>
-            {/* <img src={team.teamLogo.fields.file.url} alt={`${team.teamName} logo.`} /> */}
+        <div className=''>
+            {/* <h1>{team.teamName}</h1> */}
+            <img className='h-20' src={team.teamLogo.fields.file.url} alt={`${team.teamName} logo.`} />
         </div>
 
 
