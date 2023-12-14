@@ -107,7 +107,7 @@ function App() {
             ...item.fields
           }
         })
-
+console.log(sanitizedContent)
         return sanitizedContent
       } catch (err) {
         console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
