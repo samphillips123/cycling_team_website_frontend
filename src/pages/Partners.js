@@ -7,7 +7,9 @@ const Partners = (props) => {
             <div className='flex'>
                 {props.partnersContent
                     .sort((a, b) => a.partnerLevel > b.partnerLevel ? 1 : -1)
-                    .map((partner) => <Partner partner={partner} key={partner._id} />)}
+                    .map((partner) => <Partner partner={partner} key={partner._id}
+                    />)
+                }
             </div>
         </div >
     )
