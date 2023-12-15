@@ -144,14 +144,14 @@ const Header = (props) => {
                             >
                                 Calendar
                             </Link>
-                            <Link
+                            {/* <Link
                                 to='/racingnews/'
                                 duration={0}
                                 smooth={true}
                                 className='cursor-pointer text-base hover:text-primary-green transition duration-200'
                             >
                                 Racing
-                            </Link>
+                            </Link> */}
                             <Link
                                 to='/news/'
                                 duration={0}
@@ -245,7 +245,7 @@ const Header = (props) => {
                                     Calendar
                                 </Link>
                             </motion.div>
-                            <motion.div variants={navItemMotion} >
+                            {/* <motion.div variants={navItemMotion} >
                                 <Link
                                     to='/racingnews/'
                                     smooth={true}
@@ -254,7 +254,7 @@ const Header = (props) => {
                                 >
                                     Racing
                                 </Link>
-                            </motion.div>
+                            </motion.div> */}
                             <motion.div variants={navItemMotion} >
                                 <Link
                                     to='/news/'

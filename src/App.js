@@ -141,29 +141,29 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // racing useEffect
-  useEffect(() => {
-    const getRacingContent = async () => {
-      try {
-        const racingContent = await client.getEntries({
-          content_type: 'teamNews',
-          select: 'fields',
-        })
+  // // racing useEffect
+  // useEffect(() => {
+  //   const getRacingContent = async () => {
+  //     try {
+  //       const racingContent = await client.getEntries({
+  //         content_type: 'teamNews',
+  //         select: 'fields',
+  //       })
 
-        const sanitizedContent = racingContent.items.map((item) => {
-          return {
-            ...item.fields
-          }
-        })
+  //       const sanitizedContent = racingContent.items.map((item) => {
+  //         return {
+  //           ...item.fields
+  //         }
+  //       })
 
-        return sanitizedContent
-      } catch (err) {
-        console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
-      }
-    }
-    getRacingContent().then((response) => setRacingContent(response))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  //       return sanitizedContent
+  //     } catch (err) {
+  //       console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
+  //     }
+  //   }
+  //   getRacingContent().then((response) => setRacingContent(response))
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
 
   // news useEffect
   useEffect(() => {
@@ -216,11 +216,11 @@ function App() {
             path='/calendar/'
             element={<Calendar calendarContent={calendarContent} />}
           />
-          <Route
+          {/* <Route
             exact
             path='/racingnews/'
             element={<RacingNews racingContent={racingContent} />}
-          />
+          /> */}
           <Route
             exact
             path='/news/'
