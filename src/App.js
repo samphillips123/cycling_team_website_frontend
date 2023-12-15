@@ -107,7 +107,7 @@ function App() {
             ...item.fields
           }
         })
-console.log(sanitizedContent)
+        console.log(sanitizedContent)
         return sanitizedContent
       } catch (err) {
         console.log(`ERROR FETCHING PAGE CONTENT FROM CONTENTFUL: ${err}`)
@@ -194,7 +194,7 @@ console.log(sanitizedContent)
       <Header
         mainContent={mainContent}
       />
-      <div className='flex flex-col justify-center items-center min-h-screen'>
+      <div className='flex flex-col min-h-screen '>
         <Routes>
           <Route
             exact
