@@ -232,7 +232,7 @@ function App() {
             <Route
               exact
               path='/news/:id'
-              element={<ViewArticle newsContent={newsContent} />}
+              element={<ViewArticle viewNewsContent={newsContent} />}
             />
           </Routes>
         </div>
