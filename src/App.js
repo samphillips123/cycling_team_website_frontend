@@ -195,7 +195,7 @@ function App() {
         mainContent={mainContent}
       />
       <div className='flex flex-col min-h-screen'>
-        <div className=''>
+        <div>
           <Routes>
             <Route
               exact
