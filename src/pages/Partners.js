@@ -6,12 +6,12 @@ const Partners = (props) => {
     const isDesktop = useMediaQuery('(min-width: 1024px)');
 
     return (
-        <div className='flex flex-col absolute top-32 left-20 mr-12'>
-            <h1 className='font-bold text-2xl'>Partners</h1>
+        <div className='flex flex-col absolute top-32 left-10 mr-12'>
+            <h1 className='font-bold text-2xl mb-4'>Partners</h1>
             <div className={
                 isDesktop
-                    ? 'grid grid-cols-4 gap-6'
-                    : 'grid grid-cols-2 gap-6'
+                    ? 'grid grid-cols-[220px,220px,220px,220px] gap-6 place-items-center'
+                    : 'grid grid-cols-[220px,220px] gap-6 place-items-center'
             }
             >
                 {props.partnersContent
