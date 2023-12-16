@@ -13,6 +13,7 @@
 > React.js 
 > Contentful.com to use as a headless CMS for the backend. Since this will potentially be used by someone who is not as tech savvy to manage the content on the website, the headless CMS will be a more user friendly platform
 > Tailwind.css for styling
+> Flag API for team members - https://flagsapi.com/
 
 > Dependancies
 > 
