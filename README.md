@@ -21,6 +21,7 @@
 > aos
 > contentful
 > react-router-dom
+> tailwindcss
 
 > Routes:<br />
 >
