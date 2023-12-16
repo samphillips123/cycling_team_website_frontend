@@ -190,12 +190,12 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div>
       <Header
         mainContent={mainContent}
       />
-      <div className='flex flex-col min-h-screen '>
-        <Routes>
+      <div className='flex flex-col min-h-screen'>
+        <Routes className='flex-1'>
           <Route
             exact
             path='/'
@@ -228,9 +228,9 @@ function App() {
           />
         </Routes>
       </div>
-      <Footer
-        mainContent={mainContent}
-      />
+        <Footer
+          mainContent={mainContent}
+        />
     </div>
   );
 }

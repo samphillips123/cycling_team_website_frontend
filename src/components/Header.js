@@ -106,8 +106,8 @@ const Header = (props) => {
     return (
         <nav className={
             scrollBackground
-                ? 'h-14 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2 transition ease-in-out duration-200 shadow-custom shadow-primary-green'
-                : 'h-14 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2 transition ease-in-out duration-200'
+                ? 'h-20 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2'
+                : 'h-20 w-[calc(100%-2rem)] fixed top-0 left-4 z-10 flex items-center justify-between p-8 font-medium my-2'
         }
         >
             {/* navbar if desktop */}
@@ -119,12 +119,12 @@ const Header = (props) => {
                                 {props.mainContent.map((team) => <TeamLogo team={team} key={team._id} />)}
                             </div>
                         </Link>
-                        <div className='flex items-center gap-4 text-sm'>
+                        <div className='flex items-center gap-4'>
                             <Link
                                 to='/team/'
                                 duration={0}
                                 smooth={true}
-                                className='cursor-pointer text-base hover:text-primary-green transition duration-200'
+                                className='cursor-pointer font-bold text-lg hover:text-green-950 transition duration-200'
                             >
                                 Team
                             </Link>
@@ -132,7 +132,7 @@ const Header = (props) => {
                                 to='/partners/'
                                 duration={0}
                                 smooth={true}
-                                className='cursor-pointer text-base hover:text-primary-green transition duration-200'
+                                className='cursor-pointer font-bold text-lg hover:text-green-950 transition duration-200'
                             >
                                 Partners
                             </Link>
@@ -140,7 +140,7 @@ const Header = (props) => {
                                 to='/calendar/'
                                 duration={0}
                                 smooth={true}
-                                className='cursor-pointer text-base hover:text-primary-green transition duration-200'
+                                className='cursor-pointer font-bold text-lg hover:text-green-950 transition duration-200'
                             >
                                 Calendar
                             </Link>
@@ -148,7 +148,7 @@ const Header = (props) => {
                                 to='/racingnews/'
                                 duration={0}
                                 smooth={true}
-                                className='cursor-pointer text-base hover:text-primary-green transition duration-200'
+                                className='cursor-pointer font-bold text-lg hover:text-green-950 transition duration-200'
                             >
                                 Racing
                             </Link> */}
@@ -156,7 +156,7 @@ const Header = (props) => {
                                 to='/news/'
                                 duration={0}
                                 smooth={true}
-                                className='cursor-pointer text-base hover:text-primary-green transition duration-200'
+                                className='cursor-pointer font-bold text-lg hover:text-green-950 transition duration-200'
                             >
                                 News
                             </Link>
@@ -211,7 +211,7 @@ const Header = (props) => {
                         initial='hidden'
                         animate='visible'
                         exit='exit'
-                        className='fixed top-[80px] left-4  w-[calc(100%-2rem)] h-screen flex items-center justify-center z-10 shadow-custom shadow-primary-green'
+                        className='fixed top-[80px] left-4  w-[calc(100%-2rem)] h-screen flex items-center justify-center z-10'
                     >
                         {/* nav links container */}
                         <div className='flex flex-col items-center justify-center gap-12 h-full' >
