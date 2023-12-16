@@ -2,76 +2,65 @@
 
 ## Live link to Netlify: https://cycling-team-website.netlify.app/
 
+## Project Description
+> Include:<br />
+> General App Idea/Purpose:<br />
+
+> This is a public website for a cycling team to share their information, such as, their roster, sponsors, calendar, and news. All content will be accessible by the public. An admin for the team will be able to log in with a hidden route in order to add, edit, delete all content in the different forms. This will be able to be used as a template for other teams if wanted. <br />
+
+> Technologies
+>
+> React.js 
+> Contentful.com to use as a headless CMS for the backend. Since this will potentially be used by someone who is not as tech savvy to manage the content on the website, the headless CMS will be a more user friendly platform
+> Tailwind.css for styling
+
+> Dependancies
+> 
+> framer-motion
+> aos
+> contentful
+> react-router-dom
+
+> Routes:<br />
+>
+> / home page
+> GET /team/ show the user all team members
+> GET /team/:id show the user the specific team member - To be added later
+>
+> GET /partners/ show the user all partners
+> GET /partners/:id show the user the specific partner - To be added later
+>
+> GET /calendar/ show the user all events
+>
+> GET /racing/ show the user all racing news - To be added later
+> GET /racing/:id show the user the specific racing news - To be added later
+>
+> GET /news/ show the user all news
+> GET /news/:id show the user the specific news - To be added later
+
+## Wireframes
+![Cycling_Team_Website_Wireframe](https://media.git.generalassemb.ly/user/49453/files/5af6820c-335e-4f05-869a-3c049f997136)
+
+## User Stories
+> As a fan of the team, I want to be able to see who all the team members are with a visual representation.
+> As a fan of the team, I want to be able to see who the sponsors are and have easy access to more information about them. 
+> As a fan of the team, I want to be able to see the upcoming events on their schedule in an easy to read format.
+> As a fan of the team, I want to be able to see racing news and be able to read the articles.
+> As a fan of the team, I want to be able to see general news and be able to read the articles.
+> As the teams' web admin, I want to be able to log in to maintain the content of the various pages of the website. 
+
+### MVP Goals
+> Have a fully functioning public facing team website with React.js and headless CMS. 
+> The user will have easy navigation and have an intuitive UI.
+> The pages will be responsive to differing screen sizes. 
+> Full CRUD functionality in all data collections. 
 
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Stretch Goals - Future Updates
+> Additional bio pages (show) for individual team members and partners. 
+> If not using the headless CMS, make sure that the images can be uploaded instead of using image urls.
+> Add ability to change color and font theme from the admin panel.
+> Need to be able to view individual news articles, team member bios, partner bios.
+> Have the partners page organized by sposor level.
+> Add Racing News page to separate the content. Filter data from one news collection.
+> Create Tailwind defaults for commonly used styling.
