@@ -13,8 +13,9 @@ import Calendar from './pages/Calendar'
 import Home from './pages/Home'
 import News from './pages/News'
 import Partners from './pages/Partners'
-import RacingNews from './pages/RacingNews'
+// import RacingNews from './pages/RacingNews'
 import Team from './pages/Team'
+import ViewArticle from './pages/ViewArticle'
 
 // HOOKS
 import { useEffect, useState } from 'react'
@@ -29,7 +30,7 @@ function App() {
   const [teamContent, setTeamContent] = useState([])
   const [partnersContent, setPartnersContent] = useState([])
   const [calendarContent, setCalendarContent] = useState([])
-  const [racingContent, setRacingContent] = useState([])
+  // const [racingContent, setRacingContent] = useState([])
   const [newsContent, setNewsContent] = useState([])
 
   // ACCESSING CONTENTFUL
@@ -176,7 +177,8 @@ function App() {
 
         const sanitizedContent = newsContent.items.map((item) => {
           return {
-            ...item.fields
+            ...item.fields,
+            ...item.sys
           }
         })
         console.log(sanitizedContent)
@@ -226,6 +228,11 @@ function App() {
               exact
               path='/news/'
               element={<News newsContent={newsContent} />}
+            />
+            <Route
+              exact
+              path='/news/:id'
+              element={<ViewArticle newsContent={newsContent} />}
             />
           </Routes>
         </div>
