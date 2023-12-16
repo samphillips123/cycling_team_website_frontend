@@ -2,7 +2,7 @@ import About from '../components/About'
 
 const Home = (props) => {
     return (
-        <div>
+        <div className='flex justify-center'>
             <About />
         </div>
     )
