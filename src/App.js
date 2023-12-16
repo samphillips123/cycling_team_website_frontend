@@ -195,42 +195,46 @@ function App() {
         mainContent={mainContent}
       />
       <div className='flex flex-col min-h-screen'>
-        <Routes className='flex-1'>
-          <Route
-            exact
-            path='/'
-            element={<Home />}
-          />
-          <Route
-            exact
-            path='/team/'
-            element={<Team teamContent={teamContent} />}
-          />
-          <Route
-            exact
-            path='/partners/'
-            element={<Partners partnersContent={partnersContent} />}
-          />
-          <Route
-            exact
-            path='/calendar/'
-            element={<Calendar calendarContent={calendarContent} />}
-          />
-          {/* <Route
+        <div className=''>
+          <Routes>
+            <Route
+              exact
+              path='/'
+              element={<Home />}
+            />
+            <Route
+              exact
+              path='/team/'
+              element={<Team teamContent={teamContent} />}
+            />
+            <Route
+              exact
+              path='/partners/'
+              element={<Partners partnersContent={partnersContent} />}
+            />
+            <Route
+              exact
+              path='/calendar/'
+              element={<Calendar calendarContent={calendarContent} />}
+            />
+            {/* <Route
             exact
             path='/racingnews/'
             element={<RacingNews racingContent={racingContent} />}
           /> */}
-          <Route
-            exact
-            path='/news/'
-            element={<News newsContent={newsContent} />}
+            <Route
+              exact
+              path='/news/'
+              element={<News newsContent={newsContent} />}
+            />
+          </Routes>
+        </div>
+        <div className=''>
+          <Footer
+            mainContent={mainContent}
           />
-        </Routes>
+        </div>
       </div>
-        <Footer
-          mainContent={mainContent}
-        />
     </div>
   );
 }
