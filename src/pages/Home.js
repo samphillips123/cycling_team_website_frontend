@@ -1,6 +1,10 @@
+import About from '../components/About'
+
 const Home = (props) => {
     return (
-        <h1>Home</h1>
+        <div>
+            <About />
+        </div>
     )
 }
 
